@@ -4,16 +4,9 @@ namespace App\Services;
 
 use App\DTO\ParcelDataDTO;
 use App\DTO\RecipientDataDTO;
-use App\Services\Interfaces\ResponseConverterInterface;
-use Illuminate\Http\Client\Factory as HttpClient;
 
 final class NovaPoshtaDeliveryService extends AbstractDeliveryService
 {
-    public function __construct(HttpClient $httpClient, private readonly ResponseConverterInterface $responseConverter)
-    {
-        parent::__construct($httpClient);
-    }
-
     /**
      * @param RecipientDataDTO $recipientData
      * @return ParcelDataDTO

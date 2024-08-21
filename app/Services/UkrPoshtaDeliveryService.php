@@ -4,20 +4,9 @@ namespace App\Services;
 
 use App\DTO\ParcelDataDTO;
 use App\DTO\RecipientDataDTO;
-use App\Services\Interfaces\ResponseConverterInterface;
-use Illuminate\Http\Client\Factory as HttpClient;
 
 final class UkrPoshtaDeliveryService extends AbstractDeliveryService
 {
-    /**
-     * @param HttpClient $httpClient
-     * @param ResponseConverterInterface $responseConverter
-     */
-    public function __construct(HttpClient $httpClient, private readonly ResponseConverterInterface $responseConverter)
-    {
-        parent::__construct($httpClient);
-    }
-
     /**
      * @param RecipientDataDTO $recipientData
      * @return ParcelDataDTO
